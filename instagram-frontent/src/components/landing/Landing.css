@@ -1,0 +1,56 @@
+.landing-right-card {
+  width: 350px;
+  padding: 40px 30px;
+  border: 1px solid #dbdbdb;
+  background-color: #ffffff;
+  text-align: center;
+  border-radius: 1px;
+}
+
+.landing-logo {
+  width: 60px;
+  margin-bottom: 20px;
+}
+
+.landing-title {
+  font-size: 22px;
+  font-weight: 600;
+  color: #262626;
+  margin-bottom: 24px;
+  line-height: 28px;
+}
+
+.landing-btn {
+  width: 100%;
+  padding: 10px;
+  background-color: #0095f6;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.landing-links {
+  font-size: 14px;
+  color: #262626;
+}
+
+.landing-links span {
+  color: #0095f6;
+  cursor: pointer;
+  font-weight: 600;
+}
+.landing-logo-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.landing-logo-svg {
+  width: 175px;
+  height: 51px;
+}

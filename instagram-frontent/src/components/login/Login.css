@@ -1,0 +1,129 @@
+.login-right-card {
+  width: 350px;
+  padding: 40px 30px;
+  border: 1px solid #dbdbdb;
+  background-color: #ffffff;
+  text-align: center;
+  border-radius: 1px;
+}
+
+.login-logo-text {
+  font-family: sans-serif;
+  font-size: 40px;
+  font-weight: 400;
+  margin-bottom: 30px;
+  letter-spacing: 1px;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.login-input {
+  width: 100%;
+  padding: 9px 8px;
+  background-color: #fafafa;
+  border: 1px solid #dbdbdb;
+  border-radius: 3px;
+  font-size: 12px;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.login-button {
+  width: 100%;
+  padding: 7px;
+  background-color: #0095f6;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.login-divider {
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+  color: #8e8e8e;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.login-divider::before,
+.login-divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background-color: #dbdbdb;
+}
+
+.login-divider::before {
+  margin-right: 18px;
+}
+
+.login-divider::after {
+  margin-left: 18px;
+}
+
+.fb-login {
+  color: #385185;
+  font-weight: 600;
+  font-size: 14px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 15px;
+}
+
+.forgot-pass {
+  font-size: 12px;
+  color: #00376b;
+  text-decoration: none;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.switch-box {
+  border: 1px solid #dbdbdb;
+  padding: 20px;
+  background-color: #ffffff;
+  margin-top: 10px;
+  font-size: 14px;
+  text-align: center;
+}
+
+.switch-box span {
+  color: #0095f6;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.success-msg {
+  color: #00a86b;
+  font-size: 14px;
+  margin-top: 15px;
+  font-weight: 500;
+}
+
+.error-msg {
+  color: #ed4956;
+  font-size: 14px;
+  margin-top: 15px;
+  font-weight: 500;
+}
+.login-logo-box {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.login-logo-img {
+  width: 175px;
+  height: auto;
+  object-fit: contain;
+}
