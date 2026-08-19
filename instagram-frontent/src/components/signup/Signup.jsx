@@ -23,7 +23,8 @@ export default function Signup({ setActiveView }) {
     setError('');
 
     try {
-      const response = await fetch('http://localhost:4000/auth/signup', {
+      
+      const response = await fetch('https://instagram-task.vercel.app/auth/signup', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -40,7 +41,7 @@ export default function Signup({ setActiveView }) {
         setError(data.message);
       }
     } catch (err) {
-      setError('Backend server se connection nahi ho saka!');
+      setError('Not Found Sorry!');
     }
   };
 
