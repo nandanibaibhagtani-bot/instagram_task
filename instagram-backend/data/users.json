@@ -33,5 +33,19 @@
     "username": "admin",
     "password": "$2b$10$jfN/CZHT9wajDXixjfGxrunOdLQXH6HhKp.lknYoPCGdyGvWt1M.m",
     "birthday": "march 25 1999"
+  },
+  {
+    "emailOrPhone": "hai@gmail.com",
+    "fullName": "ok",
+    "username": "hahah",
+    "password": "$2b$10$qiLKFzmiLFcgWcjDrOQ0CeEZl04gTFlPc8x3jUB0ie8Dnzr7wl2xW",
+    "birthday": "march 25 1999"
+  },
+  {
+    "emailOrPhone": "hello@gmail.com",
+    "fullName": "hello",
+    "username": "hi",
+    "password": "$2b$10$BxmLOBn53ANt2DwrwI99JuD2U78JUBoga2F9U8Z0fStFTiICzFqFO",
+    "birthday": "march 25 1999"
   }
 ]

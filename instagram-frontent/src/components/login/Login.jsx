@@ -37,7 +37,7 @@ export default function Login({ setActiveView }) {
         setError(data.message);
       }
     } catch (err) {
-      setError('Backend server se connection nahi ho saka!');
+      setError('Backend server cannot connected!');
     }
   };
 
