@@ -37,7 +37,7 @@ export default function Login({ setActiveView }) {
         setError(data.message);
       }
     } catch (err) {
-      setError('Backend server cannot connected!');
+      setError('Record Not Found!');
     }
   };
 
