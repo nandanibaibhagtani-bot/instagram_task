@@ -4,7 +4,24 @@ const bcrypt = require('bcryptjs');
 const fs = require('fs');
 const path = require('path');
 
-const filePath = path.join(__dirname, '../data/users.json');
+// Vercel compatible file path using /tmp directory
+const filePath = process.env.VERCEL 
+    ? path.join('/tmp', 'users.json') 
+    : path.join(__dirname, '../data/users.json');
+
+// Ensure users.json exists in /tmp on Vercel startup
+if (process.env.VERCEL && !fs.existsSync(filePath)) {
+    const initialDataPath = path.join(__dirname, '../data/users.json');
+    if (fs.existsSync(initialDataPath)) {
+        try {
+            fs.copyFileSync(initialDataPath, filePath);
+        } catch (err) {
+            fs.writeFileSync(filePath, JSON.stringify([]));
+        }
+    } else {
+        fs.writeFileSync(filePath, JSON.stringify([]));
+    }
+}
 
 const getUsers = () => {
     try {
