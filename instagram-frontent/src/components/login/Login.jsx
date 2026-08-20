@@ -20,7 +20,7 @@ export default function Login({ setActiveView }) {
     setError('');
 
     try {
-      const response = await fetch('https://insta-assignment-nu.vercel.app/auth/login', {
+      const response = await fetch('https://insta-assignment-six.vercel.app/auth/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
