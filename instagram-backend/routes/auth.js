@@ -4,28 +4,30 @@ const bcrypt = require('bcryptjs');
 const fs = require('fs');
 const path = require('path');
 
-// Vercel compatible file path using /tmp directory
+// Vercel /tmp directory path
 const filePath = process.env.VERCEL 
     ? path.join('/tmp', 'users.json') 
     : path.join(__dirname, '../data/users.json');
 
-// Ensure users.json exists in /tmp on Vercel startup
-if (process.env.VERCEL && !fs.existsSync(filePath)) {
-    const initialDataPath = path.join(__dirname, '../data/users.json');
-    if (fs.existsSync(initialDataPath)) {
-        try {
-            fs.copyFileSync(initialDataPath, filePath);
-        } catch (err) {
-            fs.writeFileSync(filePath, JSON.stringify([]));
-        }
-    } else {
-        fs.writeFileSync(filePath, JSON.stringify([]));
-    }
-}
-
+// Safe function to get users without blocking server startup
 const getUsers = () => {
     try {
+        const dir = path.dirname(filePath);
+        if (!fs.existsSync(dir)) {
+            fs.mkdirSync(dir, { recursive: true });
+        }
         if (!fs.existsSync(filePath)) {
+            if (process.env.VERCEL) {
+                const initialDataPath = path.join(__dirname, '../data/users.json');
+                if (fs.existsSync(initialDataPath)) {
+                    try {
+                        fs.copyFileSync(initialDataPath, filePath);
+                        const data = fs.readFileSync(filePath, 'utf8');
+                        return JSON.parse(data);
+                    } catch (e) {}
+                }
+            }
+            fs.writeFileSync(filePath, JSON.stringify([]));
             return [];
         }
         const data = fs.readFileSync(filePath, 'utf8');
