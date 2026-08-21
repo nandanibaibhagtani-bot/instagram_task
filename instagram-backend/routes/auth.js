@@ -3,7 +3,7 @@ const router = express.Router();
 const bcrypt = require('bcryptjs');
 
 // In-memory storage array to ensure serverless function NEVER hangs or times out
-let usersList = [];
+let usersList = []; // updated
 
 router.post('/signup', async (req, res) => {
     try {
@@ -45,7 +45,7 @@ router.post('/login', async (req, res) => {
 
         const isMatch = await bcrypt.compare(password, user.password);
         if (!isMatch) {
-            return res.status(400).json({ message: "Invalid password!" });
+            return res.status(400).json({ message: "Invalid password." });
         }
 
         res.status(200).json({ message: "Login successful!" });
